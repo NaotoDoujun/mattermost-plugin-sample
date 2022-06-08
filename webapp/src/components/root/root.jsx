@@ -23,7 +23,7 @@ const Root = ({ visible, close }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (values.text) {
-      fetch('http://localhost:8000/similarwords/', {
+      fetch('http://localhost:8065/plugins/com.example.mattermost-plugin-sample', {
         method: 'POST',
         body: JSON.stringify(values),
         headers: {
