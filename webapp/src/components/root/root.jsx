@@ -30,10 +30,24 @@ const Root = ({ visible, close }) => {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         }
-      }).then((res) => res.json()).then(console.log).catch(console.error);
+      }).then((res) => {
+        if (!res.ok) {
+          console.error('response.ok:', res.ok);
+          console.error('esponse.status:', res.status);
+          console.error('esponse.statusText:', res.statusText);
+          throw new Error(res.statusText);
+        }
+        return res.json();
+      }).then((data) => {
+        console.log(data);
+        setValues({ text: '' });
+        close();
+      }).catch((err) => {
+        console.error('error occurred', err);
+        setValues({ text: '' });
+        close();
+      });
     }
-    setValues({ text: '' });
-    close();
   };
 
   return (
