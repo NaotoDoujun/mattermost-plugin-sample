@@ -1,0 +1,27 @@
+{
+    "id": "com.example.mattermost-plugin-sample",
+    "name": "Similar Words Search",
+    "description": "for mattamost plugin sample",
+    "homepage_url": "https://github.com/NaotoDoujun/mattermost-plugin-sample",
+    "support_url": "https://github.com/NaotoDoujun/mattermost-plugin-sample/issues",
+    "release_notes_url": "https://github.com/NaotoDoujun/mattermost-plugin-sample/releases/tag/v0.1.0",
+    "version": "0.1.0",
+    "min_server_version": "5.37.0",
+    "server": {
+        "executables": {
+            "linux-amd64": "server/dist/plugin-linux-amd64",
+            "linux-arm64": "server/dist/plugin-linux-arm64",
+            "darwin-amd64": "server/dist/plugin-darwin-amd64",
+            "darwin-arm64": "server/dist/plugin-darwin-arm64",
+            "windows-amd64": "server/dist/plugin-windows-amd64.exe"
+        }
+    },
+    "webapp": {
+        "bundle_path": "webapp/dist/main.js"
+    },
+    "settings_schema": {
+        "header": "",
+        "footer": "",
+        "settings": []
+    }
+}

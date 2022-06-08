@@ -1,0 +1,42 @@
+{
+  "name": "webapp",
+  "description": "This plugin demonstrates the capabilities of a Mattermost plugin.",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "debug": "webpack --mode=none",
+    "lint": "eslint --ignore-pattern node_modules --ignore-pattern dist --ext .js --ext .jsx --ext tsx --ext ts . --quiet",
+    "fix": "eslint --ignore-pattern node_modules --ignore-pattern dist --ext .js --ext .jsx --ext tsx --ext ts . --quiet --fix",
+    "test": "jest --forceExit --detectOpenHandles --verbose",
+    "test:watch": "jest --watch",
+    "test-ci": "jest --forceExit --detectOpenHandles --maxWorkers=2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-react": "^7.17.12",
+    "@babel/eslint-parser": "7.18.2",
+    "@babel/plugin-proposal-class-properties": "^7.17.12",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.18.0",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "babel-loader": "^8.2.5",
+    "babel-plugin-typescript-to-proptypes": "^2.0.0",
+    "eslint": "8.17.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-react": "7.30.0",
+    "eslint-plugin-react-hooks": "4.5.0",
+    "eslint-import-resolver-webpack": "0.13.2",
+    "jest": "^28.1.1",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "core-js": "3.6.5",
+    "mattermost-redux": "^5.33.1",
+    "react": "^18.1.0",
+    "react-redux": "^8.0.2",
+    "redux": "^4.2.0"
+  }
+}
