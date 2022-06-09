@@ -23,7 +23,8 @@ const Root = ({ visible, close }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (values.text) {
-      fetch('http://localhost:8065/plugins/com.example.mattermost-plugin-sample', {
+      const url = `${location.protocol}//${location.host}/plugins/com.example.mattermost-plugin-sample`;
+      fetch(url, {
         method: 'POST',
         body: JSON.stringify(values),
         headers: {
@@ -40,13 +41,11 @@ const Root = ({ visible, close }) => {
         return res.json();
       }).then((data) => {
         console.log(data);
-        setValues({ text: '' });
-        close();
       }).catch((err) => {
         console.error('error occurred', err);
-        setValues({ text: '' });
-        close();
       });
+      setValues({ text: '' });
+      close();
     }
   };
 
